@@ -1,0 +1,9 @@
+/* CSS for entire shipping port*/
+.body{
+    background-color: lightskyblue;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
