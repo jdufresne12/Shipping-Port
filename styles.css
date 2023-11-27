@@ -1,9 +1,49 @@
 /* CSS for entire shipping port*/
 .body{
-    background-color: lightskyblue;
+    background-color: lightblue;
 }
 .container {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
 }
+.h1 {
+    text-align: center;
+}
+.centered-box{
+    width: 20%;       /* Width of the box */
+    height: 55%;      /* Height of the box */
+    background-color: white; /* Background color of the box */
+    position: absolute; /* Positioning method */
+    top: 40%;           /* Push down from the top half of its height */
+    left: 50%;          /* Push right from the left half of its width */
+    transform: translate(-50%, -50%); /* Offset the position */
+    border-radius: 5%;
+
+}
+.centered-container-form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between form elements */
+}
+.label{
+    font: 1.2em "Fira Sans", sans-serif;
+}
+.registration-div{
+    gap: 10px;
+}
+.input{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 0px;
+    background-color: lightgrey;
+    width: 50%;
+}
+.input[type="text"]:focus{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 0px;
+    background-color: lightgrey;
+    width: 50%;
+    outline: 0;
+}
+

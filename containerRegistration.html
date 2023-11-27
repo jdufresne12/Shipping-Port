@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
+    <script src="/js/code.js"></script> 
+    <title>Group 8's Shipping Port</title>
+    <style></style>
+</head>
+<body class="body">
+    <h1 class="h1">Container Registration</h1>
+    <P style="text-align: center;">(Complete this form)</P>
+    <div class="centered-box">
+        <form class="centered-container-form" id="registrationForm" onsubmit="addContainer()">
+            <div class="registration-div">
+                <label for="company-name" class="label">Company Name:</label><br>
+                <input class="input" type="text" id="company-name" name="company-name"><br>
+            </div>
+
+            <div class="radio-group">
+                <label class="label">Container Source:</label><br>
+                <input type="radio" id="sourceShip" name="source" value="Ship">
+                <label for="sourceShip">Ship</label>
+                <input type="radio" id="sourceTruck" name="source" value="Truck">
+                <label for="sourceTruck">Truck</label>
+            </div>
+
+            <div>
+                <label class="label" for="sourceID">Source ID:</label><br>
+                <input class="input" type="text" id="sourceID" name="sourceID">
+            </div>
+
+            <div class="radio-group">
+                <label class="label">Container Destination:</label><br>
+                <input type="radio" id="destinationShip" name="destination" value="Ship">
+                <label for="destinationShip">Ship</label>
+                <input type="radio" id="destinationTruck" name="destination" value="Truck">
+                <label for="destinationTruck">Truck</label>
+            </div>
+
+            <div>
+                <label class="label" for="destinationID">Destination ID:</label><br>
+                <input class="input" type="text" id="destinationID" name="destinationID">
+            </div>
+
+            <div>
+                <label class="label">Storage Area:</label><br>
+
+                <input type="radio" id="area1" name="storageArea" value="1">
+                <label for="storageArea">1</label> <br>
+                <input type="radio" id="area2" name="storageArea" value="2">
+                <label for="storageArea">2</label> <br>
+                <input type="radio" id="area3" name="storageArea" value="3">
+                <label for="storageArea">3</label> <br>
+                <input type="radio" id="area4" name="storageArea" value="4">
+                <label for="storageArea">4</label> <br>
+            </div>
+
+            <button type="submit" value="Submit">Submit</button>
+
+        </form>
+    </div>
+</body>
+</html>
