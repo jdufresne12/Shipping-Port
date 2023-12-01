@@ -14,40 +14,42 @@
     <P style="text-align: center;">(Complete this form)</P>
     <div class="centered-box">
         <form class="centered-container-form" id="registrationForm" onsubmit="addContainer()">
+            <!--Company Name-->
             <div class="registration-div">
                 <label for="company-name" class="label">Company Name:</label><br>
                 <input class="input" type="text" id="company-name" name="company-name"><br>
             </div>
-
+            <!--Container Source-->
             <div class="radio-group">
                 <label class="label">Container Source:</label><br>
-                <input type="radio" id="sourceShip" name="source" value="Ship">
+                <input type="radio" id="sourceShip" name="source" value="SHIP">
                 <label for="sourceShip">Ship</label>
-                <input type="radio" id="sourceTruck" name="source" value="Truck">
+                <input type="radio" id="sourceTruck" name="source" value="TRUCK">
                 <label for="sourceTruck">Truck</label>
             </div>
 
+            <!--Source ID-->
             <div>
                 <label class="label" for="sourceID">Source ID:</label><br>
-                <input class="input" type="text" id="sourceID" name="sourceID">
+                <input class="input" type="text" id="source-id" name="sourceID">
             </div>
 
+            <!--Container Destination-->
             <div class="radio-group">
                 <label class="label">Container Destination:</label><br>
-                <input type="radio" id="destinationShip" name="destination" value="Ship">
+                <input type="radio" id="destinationShip" name="destination" value="SHIP">
                 <label for="destinationShip">Ship</label>
-                <input type="radio" id="destinationTruck" name="destination" value="Truck">
+                <input type="radio" id="destinationTruck" name="destination" value="TRUCK">
                 <label for="destinationTruck">Truck</label>
             </div>
-
+            <!--Container ID-->
             <div>
                 <label class="label" for="destinationID">Destination ID:</label><br>
-                <input class="input" type="text" id="destinationID" name="destinationID">
+                <input class="input" type="text" id="destination-id" name="destinationID">
             </div>
-
+            <!--Storage Area-->
             <div>
                 <label class="label">Storage Area:</label><br>
-
                 <input type="radio" id="area1" name="storageArea" value="1">
                 <label for="storageArea">1</label> <br>
                 <input type="radio" id="area2" name="storageArea" value="2">
