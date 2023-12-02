@@ -1,6 +1,7 @@
 /* CSS for entire shipping port*/
 .body{
-    background-color: lightblue;
+    background: url('/background/shippingPortBackground.avif') no-repeat center center fixed; 
+    background-size: cover;
 }
 .container {
     width: 80%;
@@ -8,12 +9,55 @@
     padding-top: 20px;
 }
 .h1 {
+    margin-top: 20px;
+    margin-bottom: -30px;
     text-align: center;
+    font: 2.3em "Fira Sans", sans-serif;
+}
+.small-centered-box{
+    width: 550px;       /* Width of the box */
+    height: 500px;      /* Height of the box */
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute; /* Positioning method */
+    top: 40%;           /* Push down from the top half of its height */
+    left: 50%;          /* Push right from the left half of its width */
+    transform: translate(-50%, -50%); /* Offset the position */
+    border-radius: 5%;
+}
+.wider-centered-box{
+    width: 600px;       /* Width of the box */
+    height: 700px;      /* Height of the box */
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute; /* Positioning method */
+    top: 40%;           /* Push down from the top half of its height */
+    left: 50%;          /* Push right from the left half of its width */
+    transform: translate(-50%, -50%); /* Offset the position */
+    border-radius: 5%;
+}
+.even-wider-centered-box{
+    width: 700px;       /* Width of the box */
+    height: 700px;      /* Height of the box */
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute; /* Positioning method */
+    top: 50%;           /* Push down from the top half of its height */
+    left: 50%;          /* Push right from the left half of its width */
+    transform: translate(-50%, -50%); /* Offset the position */
+    border-radius: 5%;
+}
+.long-centered-box{
+    width: 500px;       /* Width of the box */
+    height: 700px;      /* Height of the box */
+    background-color: rgba(255, 255, 255, 0.9); /* Background color of the box */
+    position: absolute; /* Positioning method */
+    top: 50%;           /* Push down from the top half of its height */
+    left: 50%;          /* Push right from the left half of its width */
+    transform: translate(-50%, -50%); /* Offset the position */
+    border-radius: 5%;
 }
 .centered-box{
-    width: 20%;       /* Width of the box */
-    height: 55%;      /* Height of the box */
-    background-color: white; /* Background color of the box */
+    width: 500px;       /* Width of the box */
+    height: 570px;      /* Height of the box */
+    background-color: rgba(255, 255, 255, 0.9);
     position: absolute; /* Positioning method */
     top: 40%;           /* Push down from the top half of its height */
     left: 50%;          /* Push right from the left half of its width */
@@ -23,12 +67,42 @@
 }
 .centered-container-form{
     padding: 20px;
+    margin-left: 35%;
     display: flex;
     flex-direction: column;
     gap: 25px; /* Space between form elements */
 }
+.centered-button-menu {
+    margin-top: 22%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100%;
+    gap: 50px;
+    opacity: 1;
+    color: lightgray;
+}
+.centered-details{
+    margin-top: 10px;
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column; 
+    gap: 20px;
+}
+.menu-type-button{
+    width: 200px; 
+    height: 50px; 
+    font: 1.2em "Fira Sans", sans-serif;
+}
 .label{
     font: 1.2em "Fira Sans", sans-serif;
+}
+.id-label{
+    margin-top: -15px;
+    padding-right: 5px;
+    font: 1.3em "Fira Sans", sans-serif;
+    text-decoration: underline;
 }
 .registration-div{
     gap: 10px;
@@ -37,13 +111,43 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     border: 0px;
     background-color: lightgrey;
-    width: 50%;
+    width: 110px;
 }
-.input[type="text"]:focus{
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    border: 0px;
-    background-color: lightgrey;
-    width: 50%;
-    outline: 0;
+.search-button{
+    margin-left: 100px;
+    cursor: pointer;
 }
-
+.topleft-center-box-input{
+    margin-top: 70px;
+    margin-left: 50px;
+}
+.details-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+  }
+  
+  .details-container h2 {
+    margin: 0; 
+    white-space: nowrap; 
+  }
+  
+  .details-container p {
+    margin: 0; 
+    font: 1.2em "Fira Sans", sans-serif;
+  }
+  .invalid-id-error{
+    align-self: center;
+    margin-top: -5px;
+    margin-bottom: -10px;
+    font: 1.0em "Fira Sans", sans-serif;
+    color: red;
+  }
+  .back-button {
+    padding: 10px 20px;
+    margin-top: 50px; /* Adjust as needed for spacing */
+    margin-right: 10%;
+    margin-right: 10%;
+    cursor: pointer;
+  }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
+    <script src="/js/code.js"></script> 
+    <title>Group 8's Shipping Port</title>
+    <style></style>
+</head>
+<body class="body">
+    <div class="centered-box" style="margin-top: 40px;">
+      <h1 class="h1">Ship Details</h1>
+      <div class="topleft-center-box-input">
+          <label for="shipId" class="id-label">Enter Ship id:</label>
+          <input class="input" type="text" id="ship-ID" name="shipID">
+          <button name="searchShip" class="search-button" onclick="searchShipInfo()">Search</button>
+      </div>
+      <div class="centered-details">
+        <p id="invalid-id" class="invalid-id-error"></p>
+        <div class="centered-details">
+          <div class="details-container">
+            <h2>Ship Name:</h2>
+            <p id="ship-name"></p>
+          </div>
+          <div class="details-container">
+            <h2>Captain:</h2>
+            <p id="captain-name"></p>
+          </div>
+          <div class="details-container">
+            <h2>Ships Action:</h2>
+            <p id="ship-action"></p>
+          </div>
+          <div class="details-container">
+            <h2>Assigned Berth:</h2>
+            <p id="berth"></p>
+          </div>
+        </div>
+        <button id="back-button" class="back-button" onclick="jumpTo('portManagment.html')">Back to port admin menu</button>
+      </div>
+    </div>
+</body>
+</html>

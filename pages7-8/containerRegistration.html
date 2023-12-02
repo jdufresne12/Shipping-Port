@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="/styles.css" rel="stylesheet">  <!--Local CSS-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
     <script src="/js/code.js"></script> 
     <title>Group 8's Shipping Port</title>
     <style></style>
 </head>
 <body class="body">
-    <h1 class="h1">Container Registration</h1>
-    <P style="text-align: center;">(Complete this form)</P>
-    <div class="centered-box">
+    <div class="wider-centered-box" style="margin-top: 50px; height: 740px;">
+        <h1 class="h1">Container Registration</h1>
+        <P style="margin-top: 40px; text-align: center;">(Complete this form)</P>
         <form class="centered-container-form" id="registrationForm" onsubmit="addContainer()">
             <!--Company Name-->
             <div class="registration-div">
@@ -42,7 +42,7 @@
                 <input type="radio" id="destinationTruck" name="destination" value="TRUCK">
                 <label for="destinationTruck">Truck</label>
             </div>
-            <!--Container ID-->
+            <!--Destination ID-->
             <div>
                 <label class="label" for="destinationID">Destination ID:</label><br>
                 <input class="input" type="text" id="destination-id" name="destinationID">
@@ -60,8 +60,12 @@
                 <label for="storageArea">4</label> <br>
             </div>
 
-            <button type="submit" value="Submit">Submit</button>
-
+            <button class="back-button" type="submit" value="Submit" style="position: absolute; margin-top: 80%; margin-left: -25px; width: 200px">
+                Submit
+            </button>
+            <button id="back-button" style="margin-top: 90px; margin-left: 1px; margin-right: 200px;" class="back-button" onclick="jumpTo('/homepage.html')">
+                Back to menu
+            </button>
         </form>
     </div>
 </body>

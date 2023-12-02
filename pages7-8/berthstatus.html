@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
+    <script src="/js/code.js"></script> 
+    <title>Group 8's Shipping Port</title>
+    <style></style>
+</head>
+<body class="body">
+    <div class="small-centered-box">
+      <h1 class="h1">Berth Details</h1>
+        <div class="centered-details" style="margin-top: 30px;">
+          <div class="centered-details">
+            <div class="details-container">
+              <h2>Berth 1:</h2>
+              <p id="berth-1"></p>
+            </div>
+            <div class="details-container">
+              <h2>Berth 2:</h2>
+              <p id="berth-2"></p>
+            </div>
+            <div class="details-container">
+              <h2>Berth 3:</h2>
+              <p id="berth-3"></p>
+            </div>
+            <div class="details-container">
+              <h2>Berth 4:</h2>
+              <p id="berth-4"></p>
+            </div>
+            <div class="details-container" style="margin-bottom: -20px;">
+              <h2>Berth 5:</h2>
+              <p id="berth-5"></p>
+            </div>
+          </div>
+          <button id="back-button" class="back-button" onclick="jumpTo('portManagment.html')">Back to port admin menu</button>
+        </div>
+    </div>
+    <script>berthStatus();</script>
+</body>
+</html>

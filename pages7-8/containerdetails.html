@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
+    <script src="/js/code.js"></script> 
+    <title>Group 8's Shipping Port</title>
+    <style></style>
+</head>
+<body class="body">
+    <h1 class="h1">Container Details</h1>
+    <div class="even-wider-centered-box">
+        <div class="topleft-center-box-input">
+            <label for="containerId" class="id-label">Enter Container id:</label>
+            <input class="input" type="text" id="containerId" name="containerID">
+            <button name="searchContainer" class="search-button" style="margin-left: 180px;" onclick="searchContainerInfo()">Search</button>
+        </div>
+
+        <div class="centered-details">
+          <p id="invalid-id" class="invalid-id-error"></p>
+          <div class="centered-details">
+            <div class="details-container">
+              <h2>Company:</h2>
+              <p id="company-name"></p>
+            </div>
+            <div class="details-container">
+              <h2>Container Status:</h2>
+              <p id="container-status"></p>
+            </div>
+            <div class="details-container">
+              <h2>Storage Area:</h2>
+              <p id="storage-area"></p>
+            </div>
+            <div class="details-container">
+              <h2>Container Arrival Source:</h2>
+              <p id="container-source"></p>
+            </div>
+            <div class="details-container">
+                <h2>Arrival Source ID:</h2>
+                <p id="source-id"></p>
+            </div>
+            <div class="details-container">
+                <h2>Container Departure Source:</h2>
+                <p id="container-destination"></p>
+            </div>
+            <div class="details-container">
+                <h2>Departure Source ID:</h2>
+                <p id="destination-id"></p>
+            </div>
+          </div>
+          <button id="back-button" class="back-button" onclick="jumpTo('portManagment.html')">Back to port admin menu</button>
+        </div>
+    </div>
+</body>
+</html>
