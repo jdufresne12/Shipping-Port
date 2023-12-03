@@ -66,15 +66,25 @@ function searchShipInfo(){
     try {
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
-                let responseObj = JSON.parse(xhr.responseText);
+                let responseObj;
                 if (xhr.status == 200) {
+                    try {
+                        responseObj = JSON.parse(xhr.responseText);
                         document.getElementById("invalid-id").innerHTML = ""; // Clear error message
                         document.getElementById("ship-name").innerHTML = responseObj.ship_name;
                         document.getElementById("captain-name").innerHTML = responseObj.captain_name;
                         document.getElementById("ship-action").innerHTML = responseObj.ship_action;
                         document.getElementById("berth").innerHTML = responseObj.berth_id;
-                        flag = 'good';
                         console.clear();
+                    } catch (parseError) {
+                        responseObj = xhr.responseText;
+                        document.getElementById("ship-name").innerHTML = "";
+                        document.getElementById("captain-name").innerHTML = "";
+                        document.getElementById("ship-action").innerHTML = "";
+                        document.getElementById("berth").innerHTML = "";
+                        document.getElementById("invalid-id").innerHTML = "Invalid Ship Id entered";
+                        console.error("Error parsing server response:", parseError);
+                    }
                 } else{
                     console.log("error");
                 }
@@ -83,15 +93,6 @@ function searchShipInfo(){
         xhr.send(jsonPayload);
     } catch (err) {
         console.log(err);
-    }
-
-    //Invalid Ship ID
-    if (flag != "good"){
-        document.getElementById("ship-name").innerHTML = "";
-        document.getElementById("captain-name").innerHTML = "";
-        document.getElementById("ship-action").innerHTML = "";
-        document.getElementById("berth").innerHTML = "";
-        document.getElementById("invalid-id").innerHTML = "Invalid Ship Id entered";
     }
 }
 
@@ -109,15 +110,25 @@ function searchTruckInfo(){
     try {
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
-                let responseObj = JSON.parse(xhr.responseText);
+                let responseObj;
                 if (xhr.status == 200) {
+                    try {
+                        responseObj = JSON.parse(xhr.responseText);
                         document.getElementById("invalid-id").innerHTML = ""; // Clear error message
                         document.getElementById("driver-name").innerHTML = responseObj.driver_name;
                         document.getElementById("truck-number").innerHTML = responseObj.truck_number;
                         document.getElementById("storage-area").innerHTML = responseObj.storage_area;
                         document.getElementById("truck-action").innerHTML = responseObj.truck_action;
-                        flag = 'good';
                         console.clear();
+                    } catch (parseError) {
+                        responseObj = xhr.responseText
+                        document.getElementById("driver-name").innerHTML = "";
+                        document.getElementById("truck-number").innerHTML = "";
+                        document.getElementById("storage-area").innerHTML = "";
+                        document.getElementById("truck-action").innerHTML = "";
+                        document.getElementById("invalid-id").innerHTML = "Invalid Truck Id entered";
+                        console.error("Error parsing server response:", parseError);
+                    }
                 } else{
                     console.log("error");
                 }
@@ -127,22 +138,11 @@ function searchTruckInfo(){
     } catch (err) {
         console.log(err);
     }
-
-    //Invalid Ship ID
-    if (flag != "good"){
-        document.getElementById("driver-name").innerHTML = "";
-        document.getElementById("truck-number").innerHTML = "";
-        document.getElementById("storage-area").innerHTML = "";
-        document.getElementById("truck-action").innerHTML = "";
-        document.getElementById("invalid-id").innerHTML = "Invalid Truck Id entered";
-    }
 }
 
 function searchContainerInfo(){
     let containerId = document.getElementById("containerId").value;
     let tmp = {containerId:containerId}
-    let flag = "invalid"; //If valid container id wasn't answered, clear the flag
-
     let jsonPayload = JSON.stringify( tmp );
     let url = urlBase + "containerdetails.php";
     let xhr = new XMLHttpRequest();
@@ -151,8 +151,10 @@ function searchContainerInfo(){
     try {
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
-                let responseObj = JSON.parse(xhr.responseText);
+                let responseObj;
                 if (xhr.status == 200) {
+                    try {
+                        responseObj = JSON.parse(xhr.responseText);
                         document.getElementById("invalid-id").innerHTML = ""; // Clear error message
                         document.getElementById("company-name").innerHTML = responseObj.company_name;
                         document.getElementById("container-status").innerHTML = responseObj.container_status;
@@ -161,8 +163,19 @@ function searchContainerInfo(){
                         document.getElementById("container-source").innerHTML = responseObj.container_source;
                         document.getElementById("destination-id").innerHTML = responseObj.dest_id;
                         document.getElementById("container-destination").innerHTML = responseObj.container_destination;
-                        flag = 'good';
                         console.clear();
+                    } catch (parseError) {
+                        responseObj = xhr.responseText
+                        document.getElementById("company-name").innerHTML = "";
+                        document.getElementById("container-status").innerHTML = "";
+                        document.getElementById("storage-area").innerHTML = "";
+                        document.getElementById("source-id").innerHTML = "";
+                        document.getElementById("container-source").innerHTML = "";
+                        document.getElementById("destination-id").innerHTML = "";
+                        document.getElementById("container-destination").innerHTML = "";
+                        document.getElementById("invalid-id").innerHTML = "Invalid Container Id entered";
+                        console.error("Error parsing server response:", parseError);
+                    }
                 } else{
                     console.log("error");
                 }
@@ -170,19 +183,8 @@ function searchContainerInfo(){
         };
         xhr.send(jsonPayload);
     } catch (err) {
+        errorFlag = true;
         console.log(err);
-    }
-
-    //Invalid Ship ID
-    if (flag != "good"){
-        document.getElementById("company-name").innerHTML = "";
-        document.getElementById("container-status").innerHTML = "";
-        document.getElementById("storage-area").innerHTML = "";
-        document.getElementById("source-id").innerHTML = "";
-        document.getElementById("container-source").innerHTML = "";
-        document.getElementById("destination-id").innerHTML = "";
-        document.getElementById("container-destination").innerHTML = "";
-        document.getElementById("invalid-id").innerHTML = "Invalid Container Id entered";
     }
 }
 
