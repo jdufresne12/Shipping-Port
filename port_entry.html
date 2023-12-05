@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">  <!--Local CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!--Local CSS--> 
+    <script src="/js/code.js"></script> 
+    <title>Group 8's Shipping Port</title>
+    <style></style>
+</head>
+<body class="body">
+    <h1 class="h1">Port Entry Page</h1>
+    <div class="centered-box">
+        <form class="centered-container-form" id="shipRegistrationForm" onsubmit="returnBerth()">
+            <div class="registration-div">
+                <label class="label" for="shipID">Ship ID:</label><br>
+                <input class="input" type="text" id="shipID" name="shipID">
+            </div>
+
+            <button type="submit" value="Submit">Submit</button>
+            
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            test(); // Call the test function when the DOM is fully loaded
+        });
+    </script>
+</body>
+</html>
