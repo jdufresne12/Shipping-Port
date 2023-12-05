@@ -52,6 +52,50 @@ function addContainer(){
     //window.location.href = 'homepage.html';
 }
 
+function addShip(shipName) {
+    // Perform an AJAX request to add the record to the database
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            if (this.status === 200) {
+                alert('Ship registered successfully!');
+            } else {
+                console.error('Error:', this.status);
+            }
+        }
+    };
+    xhr.open('POST', 'add_ship.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('ship-name=' + encodeURIComponent(shipName));
+}
+
+function checkShip() {
+    var shipName = document.getElementById('ship-name').value;
+    
+    // Perform an AJAX request to the PHP script
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            if (this.status === 200) {
+                // Handle the response from the server
+                var response = JSON.parse(this.responseText);
+                if (response.exists) {
+                    alert('Ship already registered!');
+                } else {
+                    // Proceed with adding the record
+                    addShip(shipName);
+                }
+            } else {
+                console.error('Error:', this.status);
+            }
+        }
+    };
+    xhr.open('POST', 'check_ship.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('ship-name=' + encodeURIComponent(shipName));
+}
+
+
 function searchShipInfo(){
     //Grabbing Data from page
     let shipId = document.getElementById("ship-ID").value;
