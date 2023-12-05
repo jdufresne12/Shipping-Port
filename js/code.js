@@ -54,7 +54,8 @@ function addContainer(){
 
 function addShip(shipName) {
     // Perform an AJAX request to add the record to the database
-    var xhr = new XMLHttpRequest();
+    let url = urlBase + "add_ship.php";
+    let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE) {
             if (this.status === 200) {
@@ -64,35 +65,31 @@ function addShip(shipName) {
             }
         }
     };
-    xhr.open('POST', 'add_ship.php');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send('ship-name=' + encodeURIComponent(shipName));
 }
 
 function checkShip() {
-    var shipName = document.getElementById('ship-name').value;
+    let shipName = document.getElementById('ship-name').value;
+    let tmp = {shipName:shipName}
+    let jsonPayload = JSON.stringify( tmp );
     
     // Perform an AJAX request to the PHP script
-    var xhr = new XMLHttpRequest();
+    let url = urlBase + "check_ship.php";
+    let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (this.readyState === XMLHttpRequest.DONE) {
-            if (this.status === 200) {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
                 // Handle the response from the server
                 var response = JSON.parse(this.responseText);
-                if (response.exists) {
-                    alert('Ship already registered!');
-                } else {
-                    // Proceed with adding the record
-                    addShip(shipName);
-                }
             } else {
                 console.error('Error:', this.status);
             }
         }
     };
-    xhr.open('POST', 'check_ship.php');
+    xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('ship-name=' + encodeURIComponent(shipName));
+    xhr.send(jsonPayload);
 }
 
 
